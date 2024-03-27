@@ -19,6 +19,7 @@ let timerCircle;
 let rookMoved = false;
 let playerActive = [true, true]; // Both players are active now
 let highlightGraphics = [];
+let hasPlayerWon = false;
 
 function preload() {
   this.load.image('chessboard', 'images/chessboard.png');
@@ -134,11 +135,13 @@ function highlightValidMoves(rook, target) {
   }
 
   // Check if rook's position matches target's position
-  if (rook.x <= targetX + target.width && rook.y >= targetY) {
+  if (rook.x <= targetX + target.width && rook.y >= targetY && !hasPlayerWon) {
     // Display popup message
     showPopup.call(this, "Player " + currentPlayer + " wins!");
+    hasPlayerWon = true;
   }
 }
+
 
 function highlightMove(x, y, width, height) {
   if (!this.add) {
