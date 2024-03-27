@@ -103,6 +103,7 @@ function update() {
   }
 }
 
+
 function highlightValidMoves(rook, target) {
   // Highlight moves to the left and down
   const minX = 75, minY = 100;
