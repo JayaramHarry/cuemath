@@ -140,7 +140,6 @@ function highlightValidMoves(rook, target) {
   }
 }
 
-
 function highlightMove(x, y, width, height) {
   if (!this.add) {
     console.error("this.add is not defined");
